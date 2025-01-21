@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
+use App\Models\Profile;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Profile>
+ * @extends Factory<Profile>
  */
 class ProfileFactory extends Factory
 {
@@ -17,7 +20,8 @@ class ProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'email' => $this->faker->unique()->safeEmail,
+            'region' => strtoupper($this->faker->randomElement(['US', 'CA', 'GB', 'AU']))
         ];
     }
 }
