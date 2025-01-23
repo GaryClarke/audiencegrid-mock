@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/profiles/{profile}/properties', [ProfilePropertyController::class, 'edit'])->name('properties.edit');
+
+    Route::patch('/profiles/{profile}/properties', [ProfilePropertyController::class, 'update'])->name('profiles.update');
 });
 
 require __DIR__.'/auth.php';
