@@ -12,6 +12,16 @@ class Profile extends Model
     /** @use HasFactory<ProfileFactory> */
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'email',
+        'region',
+    ];
+
     public function properties(): HasMany
     {
         return $this->hasMany(Property::class);
