@@ -1,8 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Properties for Profile: ') }} {{ $profile->email }}
+            {{ __('Edit Subscription Details for: ') }} {{ $profile->email }}
         </h2>
+        <a href="{{ route('contacts.index') }}" class="text-sm text-indigo-600 hover:underline">
+            {{ __('Back to Contacts') }}
+        </a>
     </x-slot>
 
     <div class="py-12">
